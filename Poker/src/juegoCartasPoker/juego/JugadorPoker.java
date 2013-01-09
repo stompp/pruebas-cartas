@@ -3,7 +3,6 @@ package juegoCartasPoker.juego;
 import java.util.ArrayList;
 
 import juegoCartasPoker.objetos.CartaPoker;
-import juegocartas.*;
 import juegocartas.objetos.Carta;
 
 
@@ -18,6 +17,7 @@ enum EstadosJugador{
 }
 
 enum opcionesJugador{
+	NO_ELEGIDA,
 	PASAR,
 	APOSTAR
 }

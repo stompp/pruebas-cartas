@@ -64,4 +64,10 @@ public enum NumerosPokerEnum{
 		return ((n<cadenas.length) && (n>=0)) ? cadenas[n]:"No especificada para el valor : "+String.valueOf(n) + " .";		
 	}
 	
+	static public String aloala(int numero){
+		
+		if(numero == REINA.valor) return " a la ";
+		else return " al "; 
+	}
+	
 }

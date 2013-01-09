@@ -1,6 +1,7 @@
 package juegoCartasPoker.objetos;
 
 import juegoCartasPoker.JuegoPoker;
+import juegoCartasPoker.soporte.CostantesPoker;
 import juegocartas.objetos.Carta;
 
 public class CartaPoker extends Carta{
@@ -17,5 +18,7 @@ public class CartaPoker extends Carta{
 	
 	
 	public String cadena(){return JuegoPoker.soporte.cadenaCarta(numero(), palo());}
-   		
+   	
+	@Override
+	public int numeroG(){return palo*CostantesPoker.NUMEROS_POR_PALO + numero;}
 }

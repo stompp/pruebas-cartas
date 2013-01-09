@@ -2,8 +2,9 @@ package juegocartas.objetos;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
+import java.util.Random;
 
+import juegoCartasPoker.objetos.CartaPoker;
 import juegocartas.soporte.SoporteJuegoCartas;
 
 
@@ -61,6 +62,31 @@ public class Baraja {
 			baraja.remove(baraja.size()-1);
 			return c;
 		}else return null;		
+	}
+	
+	public ArrayList<CartaPoker> manoAleatoria(int deCuantas){
+		
+		int cartasFuera = 1;
+		Random r = new Random();
+		ArrayList<CartaPoker> mano = new ArrayList<CartaPoker>();
+		barajar();
+		for (int n = 0 ; n < deCuantas ; n++){
+			
+			int i = r.nextInt(baraja.size());
+			mano.add((CartaPoker)baraja.get(i));
+			baraja.remove(i);
+		}
+		
+		return mano;
+	}
+	
+	
+	public void devolverABaraja(ArrayList<CartaPoker> cartas){
+		for(Carta c : cartas){
+			if(!baraja.contains(c)) baraja.add(c);
+		}
+		cartas.clear();
+		
 	}
 	
 	

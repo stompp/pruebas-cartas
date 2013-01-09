@@ -88,6 +88,7 @@ public class ResultadosEvaluacionManoPoker {
 			for(CartaPoker k : resto) c.add(new CartaPoker(k));
 			return Collections.max(c,new ComparadorAs());
 		default:
+			if(!coincidencias().isEmpty()) return Collections.max(coincidencias(),new ComparadorAs());
 			throw new NullPointerException();
 			
 		}
@@ -215,7 +216,9 @@ public class ResultadosEvaluacionManoPoker {
 			aux +=" : " + coincidencias.get(0).cadena();
 			break;
 		case PAREJA:
-			aux += " de " + NumerosPokerEnum.pluralParaElNumero(parejaDe());
+			aux += " de " + NumerosPokerEnum.pluralParaElNumero(parejaDe()) 
+					+  NumerosPokerEnum.aloala(distintivo2()) 
+					+ NumerosPokerEnum.textoParaElNumero(distintivo2());
 			break;
 		case FULL:	
 			aux += " de " + NumerosPokerEnum.pluralParaElNumero(trioDe()) 	
@@ -224,22 +227,25 @@ public class ResultadosEvaluacionManoPoker {
 			break;
 		case POKER:
 			aux += " de " + NumerosPokerEnum.pluralParaElNumero(distintivo1()) 
-			+ " al " + NumerosPokerEnum.textoParaElNumero(distintivo2());
+					+  NumerosPokerEnum.aloala(distintivo2()) 
+					+ NumerosPokerEnum.textoParaElNumero(distintivo2());
 			break;
 		case TRIO:
 			aux += " de " + NumerosPokerEnum.pluralParaElNumero(distintivo1()) 
-			+ " al " + NumerosPokerEnum.textoParaElNumero(distintivo2());
+					+  NumerosPokerEnum.aloala(distintivo2()) 
+					+ NumerosPokerEnum.textoParaElNumero(distintivo2());
 			break;
 		case DOBLE_PAREJA:	
 			int[] d = doblesDe();
 			aux += " de " + NumerosPokerEnum.pluralParaElNumero(d[0]) + " y " + NumerosPokerEnum.pluralParaElNumero(d[1])
-				+ " al " + NumerosPokerEnum.textoParaElNumero(distintivo2());
+					+  NumerosPokerEnum.aloala(distintivo2()) 
+					+ NumerosPokerEnum.textoParaElNumero(distintivo2());
 			break;
 		case ESCALERA:			
 		case COLOR:
 		case ESCALERA_COLOR:
 		case ESCALERA_COLOR_REAL:
-			aux += " al " + NumerosPokerEnum.textoParaElNumero(distintivo2());
+			aux += NumerosPokerEnum.aloala(distintivo2())  + NumerosPokerEnum.textoParaElNumero(distintivo2());
 			break;
 		default:
 			break;

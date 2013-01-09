@@ -1,4 +1,4 @@
-package pruebasPoker;
+package juegocartas;
 
 import java.util.ArrayList;
 

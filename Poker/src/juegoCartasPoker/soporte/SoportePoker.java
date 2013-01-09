@@ -2,13 +2,10 @@ package juegoCartasPoker.soporte;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
-
 
 import juegoCartasPoker.objetos.CartaPoker;
 import juegoCartasPoker.soporte.enums.JugadasPokerEnum;
 import juegoCartasPoker.soporte.enums.NumerosPokerEnum;
-import juegocartas.combinatoria.FuncionesCombinatoria.Combinacion;
 import juegocartas.comparadores.ComparadorNumerosCartas;
 import juegocartas.objetos.Carta;
 import juegocartas.soporte.SoporteJuegoCartas;
@@ -19,19 +16,16 @@ import juegocartas.soporte.SoporteJuegoCartas;
  public class SoportePoker extends SoporteJuegoCartas implements CostantesPoker{
 	 
 	 
-
-	
-	@Override
 	public int palos(){return PALOS;}
-	@Override
+
 	public int numerosPorPalo(){return NUMEROS_POR_PALO;}
-	@Override
+	
 	public int comodines(){return COMODINES;}
-	@Override
+	
     public String cadenaNumero(int numero){return NumerosPokerEnum.textoParaElNumero(numero);}
-	@Override
+	
 	public String cadenaPalo(int palo){return cadenasPalos[palo];}
-	@Override
+	
 	public String cadenaCarta(int numero,int palo){
 		if(palo!=COMODIN) return cadenaNumero(numero) + " de " + cadenaPalo(palo);
 		else  return cadenaPalo(palo);

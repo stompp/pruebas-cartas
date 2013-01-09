@@ -43,6 +43,7 @@ public class Carta {
      */
 	public String cadena(){return "Vacía.";};
 	public int numeroG(){return -1;};
+	
 
 
 
